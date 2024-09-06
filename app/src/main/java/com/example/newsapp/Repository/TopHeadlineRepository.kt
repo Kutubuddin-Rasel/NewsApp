@@ -21,6 +21,7 @@ class TopHeadlineRepository @Inject constructor(
             response.body()?.let { fetchedNews ->
                 // Filter articles with non-null values
                 val filteredArticles = fetchedNews.articles.filter { article ->
+                            article.author != null &&
                             article.title != null &&
                             article.description != null &&
                             article.publishedAt != null &&
