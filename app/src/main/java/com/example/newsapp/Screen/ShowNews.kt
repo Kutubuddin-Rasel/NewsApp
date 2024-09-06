@@ -27,13 +27,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
 import com.example.newsapp.Constants.Contants
-import com.example.newsapp.ViewModel.AllArticleViewModel
-import com.example.newsapp.ViewModel.DeleteViewModel
+import com.example.newsapp.ViewModel.DeleteArticleViewModel
 import com.example.newsapp.module.Article
 import java.time.LocalDateTime
 import java.time.ZoneOffset
@@ -113,7 +110,7 @@ fun Article(article: Article,navController: NavController,state:Boolean) {
 
 @Composable
 fun delete(article: Article) {
-    val viewModel:DeleteViewModel= hiltViewModel()
+    val viewModel:DeleteArticleViewModel= hiltViewModel()
     Icon(imageVector = Icons.Default.Delete,
         contentDescription = "",
         tint = Color.LightGray,
