@@ -16,6 +16,7 @@ class EveryNewsRepository @Inject constructor(private val newsApi: NewsApi) {
        if(response.isSuccessful)
        { response.body()?.let { newNews->
                val filterNews = newNews.articles.filter {article->
+                           article.author != null &&
                            article.title != null &&
                            article.description != null &&
                            article.publishedAt != null &&
